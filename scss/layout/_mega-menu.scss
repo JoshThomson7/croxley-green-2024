@@ -14,9 +14,8 @@ nav.mega-menu {
             list-style: none;
             position: relative;
             a {
-                font-size: var(--fl1-base-font-size);
-                color: #fff;
-                font-size: var(--fl1-font-xxs);
+                color: $secondary;
+                font-size: 18px;
                 font-weight: 600;
                 padding: var(--fl1-spacing-sm) var(--fl1-spacing-xs);
                 display: block;
@@ -32,7 +31,7 @@ nav.mega-menu {
 
             &:hover {
                 a {
-                    color: $primary;
+                    color: white;
                 }
             }
 

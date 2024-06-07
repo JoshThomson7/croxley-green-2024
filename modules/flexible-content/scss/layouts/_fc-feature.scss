@@ -21,7 +21,7 @@ Feature
             @include breakpoint(brotherbear) { width: 100%!important;}
         }
 
-        .feature__image { position:relative; overflow:hidden; border-right: 40px solid transparent; flex: 1; position: sticky; top: 20px;
+        .feature__image { position:relative; overflow:hidden; flex: 1; position: sticky; top: 20px;
 
             @include breakpoint(grandmabear) { border-right: 20px solid transparent;}
             @include breakpoint(brotherbear) { margin-bottom:20px; width:100%; border-right: none; border-radius: 5px !important; display: block; top: auto;}
@@ -41,11 +41,11 @@ Feature
 
         }
 
-        .feature__text { border-left: 40px solid transparent;
-            @include breakpoint(grandmabear) { border-left: 20px solid transparent;}
+        .feature__text { padding-left: 40px;
+            @include breakpoint(grandmabear) { padding-left: 20px;}
             @include breakpoint(brotherbear) { width:100%; border-left: none;}
 
-            h3 { font-size: 28px; font-weight: 700; line-height: 44px; color: var(--fl1-text); margin-bottom: 20px;}
+            h3 { font-size: 28px; font-weight: 700; line-height: 44px; color: var(--fl1-primary); margin-bottom: 20px;}
             h5 { font-size: 15px; font-weight: 600; margin-bottom: 10px; color: var(--fl1-primary); text-transform: uppercase; line-height: normal; letter-spacing: 1px;}
 
 			li, p {
@@ -109,7 +109,7 @@ Feature
 
         &.right {
 
-            .feature__image { order:1; border-left: 40px solid transparent; border-right:none;
+            .feature__image { order:1; border-right:none;
 
                 @include breakpoint(grandmabear) { border-left: 20px solid transparent;}
                 @include breakpoint(brotherbear) { width:100%; order:0; border-left:none; }
@@ -118,7 +118,7 @@ Feature
 
             }
 
-            .feature__text { border-right: 40px solid transparent; border-left:none;
+            .feature__text { padding-right: 40px; border-left:none;
                 @include breakpoint(brotherbear) { border: none;}
             }
 

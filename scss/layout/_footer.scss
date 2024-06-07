@@ -141,7 +141,7 @@ footer {
     }
 
     .footer__menus {
-        padding: 50px 0; background: #000;
+        padding: 50px 0; background: $primary;
 
         @include breakpoint(papabear) {
             padding: 0;
@@ -233,12 +233,13 @@ footer {
                     }
 
                     i {
-                        font-size: 16px;
+                        font-size: 26px;
                         color: var(--fl1-white);
                         width: 22px;
                         display: flex;
                         justify-content: center;
                         margin: 2px 10px 0 0;
+                        &:hover{color: $secondary;}
                     }
                     img {
                         width: 140px;
@@ -249,7 +250,7 @@ footer {
                         font-size: 14px;
                         color: #fff;
                         &:hover {
-                            color: $primary;
+                            color: $secondary;
                         }
                     }
                 }

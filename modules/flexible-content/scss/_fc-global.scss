@@ -152,14 +152,11 @@
 
 /// Background colours
 $fc_bk_colours: (
-    white: #fff,
-    black: #000,
     primary: $primary,
     secondary: $secondary,
-    tertiary: $tertiary,
-    dark: $tertiary,
-    quaternary: $quaternary,
-    lightgrey: $lightgrey,
+    white-bg: #fff,
+    black-bg: #000,
+    lightgrey-bg: $lightgrey,
 );
 
 @each $key, $fc_bk_colour in $fc_bk_colours {
@@ -180,12 +177,17 @@ $fc_bk_colours: (
 
         @if $key == primary or $key == dark {
             .fc-layout-heading {
-                h2,
-                p {
-                    color: #000;
+                h2{color: $secondary;}
 
-                    a{color: #000; text-decoration: underline;}
+                p {
+                    color: #fff;
+
+                    a{color: #fff; text-decoration: underline;}
                 }
+            }
+
+            .fc-free-text{
+                p{color: white!important;}
             }
 
             .fc_icon_grid_wrapper {
@@ -228,10 +230,10 @@ $fc_bk_colours: (
         } @else if $key == secondary {
             .fc-layout-heading {
                 h5 {
-                    color: #fff;
+                    color: $primary;
                 }
 
-                h2{color: #fff;}
+                h2{color: $primary;}
 
                 .fc-dots-separator{
                     .secondary{background: #fff;}

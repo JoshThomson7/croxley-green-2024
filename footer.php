@@ -21,23 +21,23 @@
 			</div>
 		</div>
 
-		<div class="subfooter footer__social">
+		<!-- <div class="subfooter footer__social">
 			<div class="max__width">
 				<ul>
-					<li><a href="https://www.facebook.com/Walford.and.Round.Opticians/?locale=en_GB" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
-					<li><a href="https://uk.linkedin.com/company/walford-&-round" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
-					<li><a href="https://twitter.com/walfordandround?lang=en" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
-					<li><a href="https://www.instagram.com/walford_and_round_opticians/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+					<li><a href="" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
+					<li><a href="" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+					<li><a href="" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
+					<li><a href="https://www.instagram.com/croxley_green_opticians/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
 				</ul>
 			</div>
-		</div>
+		</div> -->
 	</footer>
 
 	<div class="spotlight-search">
 		<div class="spotlight-search--content">
 			<a href="#" class="spotlight-close"><i class="fal fa-times"></i></a>
 
-			<h2>Search Pollards Opticians</h2>
+			<h2>Search Croxley Green Opticians</h2>
 			<form action="<?php echo esc_url(home_url()); ?>">
 				<input type="text" name="s" placeholder="ie. News" />
 				<button type="submit" class="button primary"><i class="fal fa-search"></i></button>

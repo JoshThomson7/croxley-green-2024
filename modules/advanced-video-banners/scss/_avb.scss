@@ -8,11 +8,11 @@
 
 section.avb {
 	width: 100%;
+	height: 100%;
 	position: relative;
 
 	.avb-banners {
 		position: relative;
-		z-index: 1;
 		width: 100%;
 
 		.show-on-mobile {
@@ -41,15 +41,23 @@ section.avb {
 			position: relative;
 			display: flex;
 			align-items: center;
-			min-height: 280px;
+			min-height: 35rem;
+			height: 100vh; 
 			-webkit-backface-visibility: hidden;
 			backface-visibility: hidden;
 			transform: translateZ(0) scale(1, 1);
 			-webkit-transform: translateZ(0) scale(1, 1);
 			overflow: hidden;
 
-			&.avb-auto {
-				height: auto;
+			@include breakpoint(papabear) {
+				// height: auto;
+				// min-height: 200px;
+			}
+
+			@for $i from 25 through 100 {
+				&.avb-#{$i}vh {
+					height: #{$i}vh;
+				}
 			}
 
 			// Caption
@@ -59,26 +67,46 @@ section.avb {
 				display: flex;
 				align-items: center;
 				width: 100%;
+				padding: 6rem 0 0;
 
-				@include breakpoint(brotherbear) {
-					padding: var(--fl1-spacing-xxxl) 0;
+				@include breakpoint(cousinbear) {
+					padding: 3rem 0;
+					.max__width {
+						height: 100%;
+					}
 				}
 
-				.max__width {
-					display: flex;
-					justify-content: space-between;
-					align-items: center;
+				@include breakpoint(teenbear) {
+					padding: 5rem 0 0;
 				}
+
+				.max__width{display: flex; justify-content: space-between;}
 
 				.avb-banner__caption-wrap {
-					width: 50%;
-					@include breakpoint(1000px){width: 100%;}
+					width: 100%; text-align: center;
 
 					figure {
 						margin-bottom: 20px;
+
+						@include breakpoint(cousinbear) {
+							display: flex;
+							justify-content: center;
+						}
+
 						img {
-							height: 100px;
+							height: 75px;
 							width: auto;
+
+							@include breakpoint(cousinbear) {
+								height: 65px;
+							}
+						}
+
+						&.small {
+							margin-bottom: 8px;
+							img {
+								height: 35px;
+							}
 						}
 					}
 
@@ -90,109 +118,121 @@ section.avb {
 
 				h1,
 				h2 {
-					font-size: 50px;
-					font-weight: bold;
-					color: var(--fl1-text);
+					font-size: 60px;
+					color: #fff;
 					padding: 0 0 10px;
-					line-height: 65px;
-					
-					@include breakpoint(brotherbear) {
-						font-size: 2rem;
-						line-height: 1.2;
+					line-height: 1.4;
+					@include breakpoint(papabear) {
+						font-size: 2.75rem;
+					}
+					@include breakpoint(teenbear) {
+						line-height: 1.1;
+					}
+
+					&.hidden {
+						text-indent: -9999px;
+						position: absolute;
 					}
 				}
 
 				h3 {
-					font-size: 18px;
-					font-weight: 500;
-					color: var(--fl1-primary);
-					padding: 0 0 10px;
-					text-transform: uppercase;
-					letter-spacing: 1px;
+					font-size: 30px;
+					font-family: var(--fl1-secondary-font);
+					color: var(--fl1-white);
+					line-height: 1.4;
+					margin-top: var(--fl1-spacing-sm);
+					@include breakpoint(1000px) {
+						padding: 0;
+						font-size: 20px;
+						line-height: 28px;
+					}
+
+					a {
+						color: #fff;
+						border-bottom: 1px #fff solid;
+					}
+				}
+
+				.sub-caption { 
+					position: absolute;
+					bottom: 0;
+					padding: var(--fl1-spacing-md) 0 0;
+
+					@include breakpoint(papabear) {
+						position: static;
+						padding: var(--fl1-spacing-md) 0;
+					}
+
+					@include breakpoint(teenbear) {
+						padding: var(--fl1-spacing-xl) 0 0;
+					}
 				}
 
 				p {
-					font-size: 20px;
-					color: var(--fl1-text);
-					line-height: 30px;
-					padding: 10px 0 0;
+					font-size: var(--fl1-spacing-sm);
+					font-family: var(--fl1-secondary-font);
+					color: var(--fl1-white);
+					text-transform: uppercase;
 
-					strong {
-						font-weight: 700;
+					a { 
+						color: var(--fl1-primary);
 					}
 
-					@include breakpoint(brotherbear) {
-						font-size: 18px;
-						padding-right: 0;
-						line-height: 28px;
-					}
+					// @include breakpoint(papabear) {
+					// 	font-weight: 500;
+					// }
 				}
 
 				.avb-banner__caption-actions {
-					margin-top: var(--fl1-spacing-md);
+					margin-top: 40px;
 					display: flex;
-					justify-content: flex-start;
-					gap: var(--fl1-spacing-xs);
-
+					justify-content: center;
+					gap: 8px;
 					@include breakpoint(cousinbear) {
+						margin-top: 30px;
 						width: 100%;
 					}
+
+					a{background: $primary; border: 1px solid $primary; color: $secondary; padding: 25px 30px; font-size: 18px;}
 				}
 			}
 
 			// Media
 			.avb-banner__media {
-				position: relative;
+				position: absolute;
+				z-index: 0;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
 
 				.avb-banner__medium {
-					//animation: slideOut .4s cubic-bezier(0.4, 0.29, 0.01, 1);
+					width: 100%;
+					height: 100%;
 					position: relative;
 
 					&.image {
-						transform: translateX(100px);
-						transition: all 0.8s ease;
-
-						@include breakpoint(cousinbear) {
-							transform: translateX(90px) scale(1.3);
-						}
-
-						@include breakpoint(mamabear) {
-							transform: translateX(100px) scale(1.3);
-						}
-
-						@include breakpoint(teenbear) {
-							display: none;
-						}
-					}
-
-					&.has-circles {
-						padding: 6% 12% 6% 6%;
 						height: 100%;
-						background-image: url("img/avb-circles.svg");
-						background-size: 99%;
-						background-repeat: no-repeat;
+						background-size: cover;
 						background-position: center;
+						background-repeat: no-repeat;
+						transition: all 0.8s ease;
+						position: relative;
 
-						img {
-							border-radius: 50%;
+						&.no-img {
+							background-image: url('img/banner-v-no-img.jpg');
+							background-size: cover;
+						}
+
+						img{
+							width: 600px; position: absolute; bottom: 0; left: calc(50% - 200px);
+							@include breakpoint(teenbear){
+								width: 480px;
+								bottom: 0;
+								left: calc(50% - 140px);
+							}
 						}
 					}
 
-					.video-clip-path {
-						clip-path: circle(43% at 35% 50%);
-						width: 100%;
-						height: 100%;
-						transform: translateX(100px);
-					}
-				}
-
-				&.avb_youtube {
-					min-height: 600px;
-					.avb-banner__medium {
-						transform: translateX(200px);
-						padding: 0;
-						width: 60%;
-					}
 				}
 
 				video {
@@ -210,7 +250,6 @@ section.avb {
 				iframe {
 					position: relative;
 					pointer-events: none;
-					//transform: translateX(-20%);
 				}
 
 				.loading {
@@ -232,31 +271,17 @@ section.avb {
 
 				@for $i from 0 through 100 {
 					$num: 100-$i;
-					$alpha: math.div($i, 100);
+					$alpha: calc($num / 100);
 					&.opacity-#{$num} {
 						@if $i == 100 {
 							display: none;
 						} @else {
-							background: transparentize($text, $alpha);
+							background: rgba(0, 0, 0, $alpha);
 						}
-					}
-				}
-			}
-		}
 
-		&.avb-has-form {
-			.avb-banner {
-				min-height: 525px;
-
-				@media (max-width: 1000px) {
-					align-items: flex-start;
-					width: 100%;
-
-					.avb-banner__caption {
-						.avb-banner__caption-wrap {
-							width: 100%;
-							padding-top: 40px;
-						}
+						// @include breakpoint(teenbear) {
+						// 	background: #000;
+						// }
 					}
 				}
 			}
@@ -264,35 +289,12 @@ section.avb {
 
 		/// No Banner
 		&.avb-empty {
-			.avb-banner {
-				min-height: 100px;
-				padding: 40px 0;
-
-				.avb-banner__caption {
-					padding-bottom: 0px;
-
-					&-wrap {
-						width: 60%;
-					}
-				}
-			}
-		}
-
-		&.avb-inner {
-			@include breakpoint(cousinbear) {
-				margin-bottom: 0;
-			}
+			background: var(--fl1-text);
 
 			.avb-banner {
-				.avb-banner__caption {
-					.avb-banner__caption-wrap {
-						width: 70%;
-
-						@include breakpoint(cousinbear) {
-							width: 100%;
-						}
-					}
-				}
+				height: auto;
+				min-height: 270px;
+				padding: 60px 0;
 			}
 		}
 
@@ -300,12 +302,11 @@ section.avb {
 		.slick-dots {
 			width: auto;
 			text-align: center;
-			bottom: 30px;
+			bottom: 200px;
 			display: flex;
 			align-items: center;
 			justify-content: flex-end;
-			z-index: 5;
-			padding: 0 20px;
+			z-index: 6;
 
 			@include breakpoint(cousinbear) {
 				bottom: 30px;
@@ -326,7 +327,8 @@ section.avb {
 					height: 15px;
 					border: none;
 					cursor: pointer;
-					background: $border;
+					border-radius: 50%;
+					background: rgba(white, 0.6);
 					box-shadow: 0 0 0 0 transparent;
 					vertical-align: middle;
 					color: #fff;
@@ -347,7 +349,7 @@ section.avb {
 						width: 13px;
 						height: 13px;
 						opacity: 1;
-						// background: var(--fl1-lightgrey);
+						background: $lightgrey;
 					}
 				}
 				&.slick-active {
@@ -371,9 +373,7 @@ section.avb {
 			.slick-dots {
 				left: 0;
 				justify-content: flex-start;
-				padding-left: calc((100vw - 1380px) / 2);
-				@include breakpoint(1000px){left: 20px; bottom: 0px;}
-				@include breakpoint(800px){left: 0;}
+				padding-left: calc((100vw - 1185px) / 2);
 
 				@include breakpoint(cousinbear) {
 					all: none;
@@ -387,7 +387,7 @@ section.avb {
 			.slick-dots {
 				right: 0;
 				justify-content: flex-end;
-				padding-right: calc((100vw - 1180px) / 2);
+				padding-right: calc((100vw - 1185px) / 2);
 
 				@include breakpoint(cousinbear) {
 					all: none;
@@ -396,14 +396,40 @@ section.avb {
 				}
 			}
 		}
+
+		&.avb-inner {
+			.avb-banner {
+				//min-height: 200px;
+			}
+
+			@include breakpoint(cousinbear) {
+				margin-bottom: 0;
+
+				.avb-banner {
+					height: auto !important;
+					min-height: 120px;
+					.avb-banner__caption-actions {
+						margin-top: 20px;
+					}
+				}
+			}
+		}
+	}
+
+	.avb__waves {
+		position: absolute;
+		z-index: 2;
+		bottom: 0;
+		left: 0;
+		width: 100%;
 	}
 
 	.avb__down-arrow {
 		position: absolute;
-		z-index: 5;
+		z-index: 6;
 		display: flex;
 		justify-content: center;
-		bottom: 35px;
+		bottom: 150px;
 		left: 50%;
 		transform: translateY(-50%);
 
@@ -427,25 +453,28 @@ section.avb {
 			transform: scale(1);
 			width: 50px;
 			path {
-				stroke: var(--fl1-secondary);
+				stroke: var(--fl1-white);
 			}
 		}
 	}
 }
 
-// @keyframes slideOut {
-//     from {
-//       filter:blur(15px);
-//     }
-//     to {
-//         filter:blur(0);
-//     }
-// }
-// @keyframes slideOut {
-//     from {
-//         filter:blur(0);
-//     }
-//     to {
-//         filter:blur(15px);
-//     }
-// }
+body.page-has-wave-separator {
+	section.avb .avb-banners .avb-banner {
+		.avb-banner__caption {
+			margin: 240px 0 260px;
+
+			@include breakpoint(cousinbear) {
+				margin: 140px 0 180px;
+			}
+		}
+	}
+
+	&.wl-theme-default {
+		section.avb .avb-banners .avb-banner {
+			.avb-banner__caption {
+				margin-bottom: 360px;
+			}
+		}
+	}
+}
