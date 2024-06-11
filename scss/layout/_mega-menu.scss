@@ -14,7 +14,7 @@ nav.mega-menu {
             list-style: none;
             position: relative;
             a {
-                color: $secondary;
+                color: $white;
                 font-size: 18px;
                 font-weight: 600;
                 padding: var(--fl1-spacing-sm) var(--fl1-spacing-xs);
@@ -31,7 +31,7 @@ nav.mega-menu {
 
             &:hover {
                 a {
-                    color: white;
+                    color: $secondary;
                 }
             }
 
