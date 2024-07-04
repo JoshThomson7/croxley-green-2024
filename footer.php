@@ -21,7 +21,7 @@
 			</div>
 		</div>
 
-		<!-- <div class="subfooter footer__social">
+		<div class="subfooter footer__social">
 			<div class="max__width">
 				<ul>
 					<li><a href="" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
@@ -30,7 +30,7 @@
 					<li><a href="https://www.instagram.com/croxley_green_opticians/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
 				</ul>
 			</div>
-		</div> -->
+		</div>
 	</footer>
 
 	<div class="spotlight-search">

@@ -397,6 +397,19 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
+    "\/img\/croxley-map.png" : {
+      "ft" : 32768,
+      "iS" : 850216,
+      "oA" : 0,
+      "oAP" : "\/img\/croxley-map.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
     "\/img\/logo.png" : {
       "ft" : 32768,
       "iS" : 225908,

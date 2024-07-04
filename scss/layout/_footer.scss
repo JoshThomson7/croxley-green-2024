@@ -10,11 +10,16 @@
 
 footer {
     position: relative;
-    background: #fff;
     background-repeat: no-repeat;
-    background-position: bottom center;
     background-size: 100%;
     margin-top: auto;
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.7), 
+        rgba(0, 0, 0, 0.7)
+    ), url(img/croxley-map.png);
+    background-repeat: repeat;
+    background-position: center;
+
 
     .footer__signup {
         display: flex;
@@ -141,7 +146,7 @@ footer {
     }
 
     .footer__menus {
-        padding: 50px 0; background: $primary;
+        padding: 80px 0;
 
         @include breakpoint(papabear) {
             padding: 0;
@@ -155,7 +160,10 @@ footer {
         }
 
         article {
-            width: 25%;
+            width: 33.33333%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
             @include breakpoint(papabear) {
                 width: 100%;
@@ -214,8 +222,9 @@ footer {
             }
 
             ul {
-                margin: 0;
-                padding: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
                 @include breakpoint(papabear) {
                     font-size: 16px;
                     padding-bottom: 20px;
@@ -228,6 +237,7 @@ footer {
                     padding-bottom: 8px;
                     color: #fff;
                     display: flex;
+                    text-align: center;
                     @include breakpoint(papabear) {
                         padding-bottom: 10px;
                     }
@@ -288,8 +298,8 @@ footer {
                     padding: 0 20px;
 
                     a {
-                        i{color: #000; font-size: 30px; margin-right: 20px;
-                            &:hover{color: $primary;}
+                        i{color: #fff; font-size: 30px; margin: 0 20px;
+                            &:hover{color: $secondary;}
                         }
                     }
                 }
