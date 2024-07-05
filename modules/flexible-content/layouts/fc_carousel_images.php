@@ -35,7 +35,7 @@ $logos = get_sub_field('carousel_images');
         }
 
         $attachment_id = $logo['carousel_item_image'];
-        $carousel_image = vt_resize($attachment_id,'' , 400, 100, false);
+        $carousel_image = vt_resize($attachment_id,'' , 320, 200, true);
     ?>
         <div class="carousel_image">
             <?php echo $link_start; ?>
