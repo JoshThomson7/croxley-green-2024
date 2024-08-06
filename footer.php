@@ -24,9 +24,7 @@
 		<div class="subfooter footer__social">
 			<div class="max__width">
 				<ul>
-					<li><a href="" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
-					<li><a href="" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
-					<li><a href="" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
+					<li><a href="https://www.facebook.com/profile.php?id=100090716681023&locale=en_GB" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
 					<li><a href="https://www.instagram.com/croxley_green_opticians/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
 				</ul>
 			</div>

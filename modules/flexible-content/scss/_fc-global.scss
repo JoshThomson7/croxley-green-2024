@@ -222,7 +222,7 @@ $fc_bk_colours: (
                     h3 {
                         color: #fff !important;
                     }
-                    p {
+                    p, li {
                         color: lighten($primary, 65%) !important;
                     }
                 }
