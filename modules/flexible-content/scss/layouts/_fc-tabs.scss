@@ -34,15 +34,11 @@ Tabs
             display: flex;
             justify-content: space-between;
             align-items: center;
+            
 
 			@include breakpoint(cousinbear) {
-				overflow-x: auto;
-				-ms-overflow-style: none;  /* IE and Edge */
-  				scrollbar-width: none;  /* Firefox */
-
-				&::-webkit-scrollbar {
-					display: none;
-				}
+				flex-wrap: wrap;
+                justify-content: center;
 			}
 
             li {
@@ -80,7 +76,7 @@ Tabs
                 &.active,
                 &:hover {
                     a {
-                        background: var(--fl1-primary-light);
+                        background: var(--fl1-secondary);
                     }
                 }
             }
@@ -89,7 +85,7 @@ Tabs
         .tab__content {
             padding: 42px 12% 20px;
             display: flex;
-            flex-direction: column;
+            flex-direction: column; 
 
 			@include breakpoint(cousinbear) {
 				padding: var(--fl1-spacing-lg) 0;
@@ -100,6 +96,7 @@ Tabs
                 line-height: 1.9;
                 margin-bottom: var(--fl1-spacing-sm);
                 color: $textLight;
+                text-align: center;
 
 				a{color: $primary;}
             }

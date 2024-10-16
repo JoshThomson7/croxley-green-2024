@@ -48,36 +48,11 @@ Icon Grid
             .icon-grid__icon { max-width: 150px; display: flex; margin-bottom: 20px;
                 span { 
 					font-size: 41px; color: var(--fl1-primary); display: flex; justify-content: center; align-items: center; overflow: hidden;
-					
-					&.tlc-theme-write {
-						color: var(--tlc-write);
-					}
-					&.tlc-theme-spell {
-						color: var(--tlc-spell);
-					}
-					&.tlc-theme-read {
-						color: var(--tlc-read);
-					}
-					&.tlc-theme-progress {
-						color: var(--tlc-progress);
-					}
-					&.tlc-theme-poetry {
-						color: var(--tlc-poetry);
-					}
-					&.tlc-theme-parents {
-						color: var(--tlc-parents);
-					}
-					&.tlc-theme-learning {
-						color: var(--tlc-home-learning);
-					}
-					&.tlc-theme-gray {
-						color: var(--fl1-text);
-					}
 				}
             }
 
             .icon-grid__content {
-                margin-top: 20px;
+                margin-top: 40px;
 
                 h4 { font-size: 24px; color: var(--fl1-text); line-height: 29px; font-weight: 700; margin-bottom: 20px;}
                 p { font-size: 16px; line-height: 23px; color: var(--fl1-text-light);
@@ -91,7 +66,7 @@ Icon Grid
         }
 
         &.center { text-align:center;
-            .icon-grid__icon { margin: 0 auto; justify-content: center;}
+            .icon-grid__icon { margin: 20px auto 0; justify-content: center;}
         }
         &.left { text-align:left;
             .icon-grid__icon { justify-content: flex-start;}
