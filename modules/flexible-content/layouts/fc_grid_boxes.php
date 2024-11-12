@@ -58,7 +58,7 @@ if(!empty($grid_boxes) && is_array($grid_boxes)):
 
                     <?php
                         if($image_id):
-                        $image = vt_resize($image_id,'' , 700, 500, !$image_no_crop);
+                        $image = vt_resize($image_id,'' , 433, 200, !$image_no_crop);
                     ?>
                         <figure style="background-image: url(<?php echo $image['url']; ?>)"><?php echo $link_open.$link_close; ?></figure>
                     <?php endif; ?>
